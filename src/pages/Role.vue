@@ -57,17 +57,17 @@ import {formatRoutes} from '../utils/utils'
        }).then(resp=> {
         
           if (resp && resp.status == 200) {
-            this.$store.commit('login', resp.data.obj);
+            this.$store.commit('login', resp.data.data);
             
             // 根据所选角色重新初始化菜单项
             //initMenu(router, store);
               this.getRequest("/config/regetMenu").then(resp=> {
                 if (resp && resp.status == 200) {
-                  var fmtRoutes = formatRoutes(resp.data);
+                  var fmtRoutes = formatRoutes(resp.data.data);
                   router.addRoutes(fmtRoutes);
                   // console.log(fmtRoutes)
                   store.commit('initMenu', fmtRoutes);
-                  store.dispatch('connect');
+                
                 }
               }).catch(reson=>{
                 alert("reget menu error"+reson)

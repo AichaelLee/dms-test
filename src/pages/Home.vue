@@ -229,7 +229,7 @@ export default {
   }
 
   .home-header {
-    background-color: #436bbd;
+    //background-color: #436bbd;
     height:100px;
     color: #333;
     text-align: center;

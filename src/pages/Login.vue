@@ -50,7 +50,7 @@
           this.loading = false;
           if (resp && resp.status == 200) {
             let data = resp.data;
-            this.$store.commit('login', data.obj);
+            this.$store.commit('login', data.data);
             let path = this.$route.query.redirect;
             this.$router.push({path: '/home'});
            
