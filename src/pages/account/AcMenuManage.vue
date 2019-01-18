@@ -91,7 +91,7 @@
       },
       getMenuTree(){
         let _this = this
-          this.getRequest("/system/basic/menuTree/" + 1).then(resp=> {
+          this.getRequest("/api/system/basic/menuTree/" + 1).then(resp=> {
               if (resp && resp.status == 200) {
                 var data = resp.data;
                 _this.treeData = data.menus;
@@ -102,7 +102,7 @@
       // 根据菜单id(也就是页面上的节点id)获得该菜单的详细数据
       getSingleMenuDetail(mid){
         let _this = this
-          this.getRequest("/system/basic/menu/" + mid).then(resp=> {
+          this.getRequest("/api/system/basic/menu/" + mid).then(resp=> {
               if (resp && resp.data.status == 0) {
                 this.form = resp.data.data
                 console.log(resp.data.data);

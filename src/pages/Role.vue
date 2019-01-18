@@ -52,7 +52,7 @@ import {formatRoutes} from '../utils/utils'
         //       .push({path: path == '/' || path == undefined ? '/home' : path, params: {role: "value"}});
        // this.$router.push({name: '/home', params: {role: value}})
 
-       this.postRequest("/system/basic/chooseRole",{
+       this.postRequest("/api/system/basic/chooseRole",{
          choosedRole:value
        }).then(resp=> {
         
@@ -61,7 +61,7 @@ import {formatRoutes} from '../utils/utils'
             
             // 根据所选角色重新初始化菜单项
             //initMenu(router, store);
-              this.getRequest("/config/regetMenu").then(resp=> {
+              this.getRequest("/api/config/regetMenu").then(resp=> {
                 if (resp && resp.status == 200) {
                   var fmtRoutes = formatRoutes(resp.data.data);
                   router.addRoutes(fmtRoutes);
@@ -132,7 +132,7 @@ import {formatRoutes} from '../utils/utils'
       },
       
       loadAllRoles(){
-                this.getRequest("/system/basic/userRoles").then(resp=> {
+                this.getRequest("/api/system/basic/userRoles").then(resp=> {
         
           if (resp && resp.status == 200) {
              this.roles = resp.data;
@@ -140,7 +140,7 @@ import {formatRoutes} from '../utils/utils'
         })
       },
       loadAllPlans(){
-          this.getRequest("/system/basic/getPlans").then(resp=> {
+          this.getRequest("/api/system/basic/getPlans").then(resp=> {
           if (resp && resp.status == 200) {
              this.plans = resp.data.obj;
           }

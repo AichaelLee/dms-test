@@ -247,7 +247,7 @@
     methods: {
 
       searchAllUser(){
-        this.getRequest("/system/basic/users").then(resp =>{
+        this.getRequest("/api/system/account/users").then(resp =>{
           this.tableData = resp.data.data
           
         })

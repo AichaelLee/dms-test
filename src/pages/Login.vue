@@ -42,7 +42,7 @@
       // 登录提交
       submitClick () {
         this.loading = true;
-        this.postRequest('/login', {
+        this.postRequest('/api/login', {
           username: this.loginForm.username,
           password: this.loginForm.password,
           userType: this.loginForm.userType

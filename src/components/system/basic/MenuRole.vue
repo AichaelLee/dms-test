@@ -101,7 +101,7 @@
       updateRoleMenu(index){
         var checkedKeys = this.$refs.tree[index].getCheckedKeys(true);
         var _this = this;
-        this.putRequest("/system/basic/updateMenuRole", {
+        this.putRequest("/api/system/basic/updateMenuRole", {
           rid: this.activeColItem,
           mids: checkedKeys
         }).then(resp=> {
@@ -115,7 +115,7 @@
           return;
         }
         var _this = this;
-        this.getRequest("/system/basic/menuTree/" + activeName).then(resp=> {
+        this.getRequest("/api/system/basic/menuTree/" + activeName).then(resp=> {
           if (resp && resp.status == 200) {
             var data = resp.data;
             _this.treeData = data.menus;
@@ -128,7 +128,7 @@
       },
       initRoles(){
         var _this = this;
-        this.getRequest("/system/basic/roles").then(resp=> {
+        this.getRequest("/api/system/basic/roles").then(resp=> {
           _this.loading = false;
           if (resp && resp.status == 200) {
             _this.roles = resp.data;

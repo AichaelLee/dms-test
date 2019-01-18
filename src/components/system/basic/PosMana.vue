@@ -113,7 +113,7 @@
         }
         this.loading = true;
         var _this = this;
-        this.putRequest(this.state=='position'?"/system/basic/position":"/system/basic/joblevel", {name: this.updatePosName, id: this.updatePosId,titleLevel:this.updateTitleLevel}).then(resp=> {
+        this.putRequest(this.state=='position'?"/api/system/basic/position":"/api/system/basic/joblevel", {name: this.updatePosName, id: this.updatePosId,titleLevel:this.updateTitleLevel}).then(resp=> {
           _this.loading = false;
           if (resp && resp.status == 200) {
             this.dialogVisible = false;

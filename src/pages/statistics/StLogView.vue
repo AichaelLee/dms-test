@@ -177,7 +177,7 @@
     methods: {
 
       SearchAllLogs(){
-        this.getRequest("/system/basic/logs").then(resp =>{
+        this.getRequest("/api/system/basic/logs").then(resp =>{
           this.tableData = resp.data.data
           
         })
@@ -213,7 +213,7 @@
       seach() {
         this.tableload = true
         let actions = this.editdata()
-        this.testHis("/system/basic/logs",actions).then(resp =>{
+        this.testHis("/api/system/basic/logs",actions).then(resp =>{
           this.tableData = resp.data.data
           this.pagenum = 1
            this.tableload = false

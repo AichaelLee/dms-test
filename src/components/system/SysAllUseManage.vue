@@ -227,7 +227,7 @@
     methods: {
 
       searchAllUser(){
-        this.getRequest("/system/basic/users").then(resp =>{
+        this.getRequest("/api/system/basic/users").then(resp =>{
           this.tableData = resp.data.data
           
         })
